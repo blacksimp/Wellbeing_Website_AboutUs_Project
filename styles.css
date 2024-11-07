@@ -1,107 +1,285 @@
-/* Basic Styling */
-body {
-    font-family: Arial, sans-serif;
+/* Reset */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    background-color: #f4f6f8;
-    color: #333;
+    box-sizing: border-box;
 }
 
-/* Header Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Primary colors with gradients */
+:root {
+    --primary-gradient: linear-gradient(135deg, #00674F, #619964); /* Gradient for navbar */
+    --button-gradient: linear-gradient(135deg, #348f57, #2e7d32);
+    --secondary-color: #ffffff;
+    --accent-color: #333333;
+    --text-light: #c7c7c7;
+    --background-light: #f5f5f5;
+}
+
+/* Universal Container */
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+/* Header with gradient background */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
+    background: var(--primary-gradient);
+    color: var(--secondary-color);
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+.search-bar input:focus {
+    width: 250px;
+}
+
+/* Navbar styling with pill-shaped buttons spaced out */
+nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* Space out buttons across the navbar */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly; /* Space out each button */
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    font-size: 1rem !important; /* Adjust as needed */ 
+    font-weight: 400 !important; /* Set to normal weight */
+    color: var(--secondary-color);
+    text-decoration: none;
+    background: var(--button-gradient);
+    padding: 12px 24px;
+    border-radius: 50px; /* Pill shape */
+    margin: 0 5px !important; /* Add space between buttons */
+    transition: background 0.3s ease, color 0.3s ease;
+    box-shadow: none; 
+}
+
+nav a:hover {
+    background: #004d40;
+    color: #f1f1f1;
+}
+
+.search-bar {
+    position: relative;
+    flex: 1; /* Takes up available space */
+    max-width: 200px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: width 0.3s ease;
+}
+
+.search-bar input:focus {
+    max-width: 250px; /* Expands the search bar on focus */
+}
+
+/* Main Content */
+main {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 200px;
+    max-width: 1500px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+}
+
+.therapy-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-content h2 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.emergency-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: var(--button-gradient);
+    color: var(--secondary-color);
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.emergency-button:hover {
+    background: #2e7d32;
+}
+
+/* Footer */
+footer {
+    background-color: var(--accent-color);
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Utility Classes */
+.text-center {
     text-align: center;
 }
 
-header nav ul {
-    list-style-type: none;
-    padding: 0;
+.margin-bottom {
+    margin-bottom: 20px;
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-header nav ul li a {
-    color: white;
+/* Buttons */
+button,
+a.button {
+    padding: 10px 15px;
+    background: var(--button-gradient);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    text-align: center;
     text-decoration: none;
 }
 
-/* Main Content Styling */
-.about-content {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: center;
+button:hover,
+a.button:hover {
+    background: #2e7d32;
 }
 
-.about-content h2 {
-    color: #333;
-}
+/* Responsive Design for Mobile and Tablet */
 
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #666;
-}
-
-/* Core Values Section */
-.values-section {
-    margin-top: 30px;
-    text-align: left;
-}
-
-.values-section h3 {
-    color: #4CAF50;
-}
-
-.values-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.values-section ul li {
-    margin-bottom: 10px;
-    background: #e8f5e9;
+/* Hamburger icon for mobile and tablet */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
     padding: 10px;
-    border-left: 4px solid #4CAF50;
+    text-align: right;
 }
 
-/* Team Section */
-.team-section {
-    margin-top: 40px;
-    text-align: left;
-}
-
-.team-section h3 {
-    color: #4CAF50;
-}
-
-.team-member {
-    display: flex;
+/* Mobile and Tablet Navigation */
+#mobileNav ul {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    gap: 10px;
+    padding: 0;
+    width: 100%;
 }
 
-.team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
+#mobileNav ul li {
+    width: 100%;
 }
 
-.team-member h4 {
-    margin: 0;
-    color: #333;
+#mobileNav.active ul {
+    display: flex; /* Show menu when active */
 }
 
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
+@media (max-width: 1024px) {
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile and tablet */
+    }
+
+    #mobileNav ul {
+        display: none; /* Hide menu by default */
+    }
+
+    #mobileNav.active ul {
+        display: flex; /* Show menu when active */
+    }
+    
+
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex: none;
+    }
+}
+
+/* Laptop/Desktop (1025px and above) */
+@media (min-width: 1025px) {
+    /* Show nav by default on large screens */
+    #mobileNav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .hamburger {
+        display: none;
+    }
 }

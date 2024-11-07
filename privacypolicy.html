@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background image applied to the entire body */
+        body {
+            background-image: url('52062964.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Base styling for the content box */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .content h2 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        .content p {
+            max-width: 800px;
+            margin: 10px auto;
+            line-height: 1.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .content {
+                padding: 15px;
+                max-width: 95%;
+                margin: 10px;
+                box-shadow: none;
+            }
+
+            .content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .content h2 {
+                font-size: 1.3rem;
+            }
+
+            .content p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Search Bar and Hamburger Menu -->
+    <header>
+        <div class="search-bar">
+            <input type="text" id="search-bar" placeholder="Search for pages..." oninput="searchPages()">
+            <div id="search-results"></div> <!-- For displaying search results -->
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="mobileNav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="quickfixes.html">Quick Fixes?</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="chatbot.html">Chatbot</a></li>
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+            <h1>Mental Health Website</h1>
+        </nav>
+    </header>
+
+    <!-- Main Content Box for Privacy Policy -->
+    <main>
+        <section class="content">
+            <h1>Privacy Policy</h1>
+            <h2>Introduction</h2>
+            <p>
+                At Rgu Echo, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and the steps we take to ensure its security.
+            </p>
+
+            <h2>1. Information We Collect</h2>
+            <p>
+                We may collect the following types of information:
+                <ul>
+                    <li><strong>Personal Information:</strong> Such as your name, email address, and other contact details provided voluntarily.</li>
+                    <li><strong>Usage Data:</strong> Information on how you interact with our website, including pages visited, time spent, and actions taken.</li>
+                </ul>
+            </p>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>
+                We use your information to improve your experience on our site. Specifically, we may use your data to:
+                <ul>
+                    <li>Respond to inquiries and provide support.</li>
+                    <li>Personalize your experience based on your preferences.</li>
+                    <li>Analyze website usage to enhance functionality and content.</li>
+                </ul>
+            </p>
+
+            <h2>3. Information Protection</h2>
+            <p>
+                We implement various security measures to protect your personal data from unauthorized access, alteration, disclosure, or destruction. Access to your information is restricted to only those team members who need it to perform their tasks.
+            </p>
+
+            <h2>4. Sharing Your Information</h2>
+            <p>
+                We do not sell, trade, or otherwise transfer your personal information to third parties. We may share information with trusted service providers who assist us in operating our website, as long as they agree to keep this information confidential.
+            </p>
+
+            <h2>5. Your Rights</h2>
+            <p>
+                You have the right to access, correct, or delete your personal information. To make such requests, please contact us at the email address provided below.
+            </p>
+
+            <h2>6. Changes to This Privacy Policy</h2>
+            <p>
+                We may update our Privacy Policy periodically. Any changes will be posted on this page, and we encourage you to review it regularly to stay informed about how we protect your information.
+            </p>
+
+            <h2>7. Contact Us</h2>
+            <p>
+                If you have any questions regarding this Privacy Policy, please contact us at:
+                <br>Email:
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Created by staff and students at Robert Gordon University.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file for toggle menu and search functionality -->
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
